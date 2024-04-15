@@ -1,0 +1,96 @@
+.PostContainer {
+  position: relative;
+  width: 400px;
+  height: auto;
+  margin: 18px;
+  position: relative;
+  left: 0%;
+  border-radius: 24px;
+  background-color: #FFF9E7;
+  display: inline-block;
+}
+
+.DarkPost {
+  position: relative;
+  width: 400px;
+  height: auto;
+  margin: 18px;
+  position: relative;
+  left: 0%;
+  border-radius: 24px;
+  background-color: #d3b403fa;
+  display: inline-block;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 25px;
+  margin-left: 0px;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  height: 56.56px;
+  left: 80px;
+  top: 3px;
+
+  color: #5F5D59;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-left: 3.7%;
+
+  >h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .date {
+    margin: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: red;
+  }
+
+}
+
+.content {
+  margin: 0 -20px;
+  padding: 12px 27px;
+  white-space: pre-wrap;
+  width: 400px;
+
+  color: #5F5D59;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.PostFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 25px;
+  gap: 10px;
+  width: 100%;
+
+  color: #5F5D59;
+}
+
+.label {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.btn {
+  position: relative;
+  left: -140px;
+  top: -30px;
+  color: grey;
+  font-size: 2.0em;
+  cursor: pointer;
+}

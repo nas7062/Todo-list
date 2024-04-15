@@ -1,0 +1,42 @@
+.container {
+    z-index: 1;
+    background-color: rgba(45, 45, 45, 0.3);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view {
+    z-index: 2;
+
+    position: absolute;
+    top: 46px;
+    right: 21px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 43px;
+    color: #5F5D59;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    position: relative;
+    left: -900px;
+    top: 200px;
+    margin-top: 50px;
+    cursor: pointer;
+}

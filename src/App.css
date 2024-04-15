@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  
+}
+.darkbox{
+  text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -37,3 +42,4 @@
     transform: translateY(0px);
   }
 }
+
