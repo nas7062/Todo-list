@@ -26,10 +26,9 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }) => {
     let days = [];
     let day = StartDate;
     let formattedDate = '';
-
     while (day <= EndDate) {
         for (let i = 0; i < 7; i++) {
-            formattedDate = format(day, 'd');
+            formattedDate = format(day,'d');
             const cloneDay = day;
             days.push(
                 <div className={`col cell ${!isSameMonth(day, MonthStart) ? `${style.disabled}` :
@@ -57,12 +56,10 @@ const RenderCells = ({ currentMonth, selectedDate, onDateClick }) => {
 
 export const Calendar = () => {
     const dispatch = useDispatch();
-
     const isOpenCalendar = useSelector((state) => state.event.CalendarOpen);
     const currentDate = new Date();
     const currentDateClone = new Date();
     const [selectedDate, setselectedDate] = useState(new Date());
-
     const DateSelect = (day) => {
         setselectedDate(day);
         dispatch(setDates(day.toISOString()));
@@ -74,9 +71,7 @@ export const Calendar = () => {
     let currentMonth = new Date(format(currentDate, 'yyyy'));
     let Months = [];
     const monthRef = useRef(null);
-
     const handleScroll = () => {
-
         monthRef.current.scrollTop = 100;
         monthRef.current.scrollLeft = 50;
     };
@@ -85,9 +80,7 @@ export const Calendar = () => {
             <div className={style.item} key={uuid()}
                 ref={
                     format(currentMonth, 'MM') === format(currentDateClone, 'MM')
-                        ? monthRef
-                        : null
-                }
+                        ? monthRef : null }
                 onScroll={handleScroll}>
                 <RenderHeader currentMonth={currentMonth} />
                 <RenderCells currentMonth={currentMonth} selectedDate={selectedDate}
@@ -131,7 +124,6 @@ export const Calendar = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             ) : null}
         </>

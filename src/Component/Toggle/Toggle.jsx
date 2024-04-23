@@ -5,13 +5,10 @@ import { useState } from "react";
 
 export default function Toggle() {
     const dispatch = useDispatch();
-    const [isdark, setisdark] = useState(false);
-
+    const isDark = useSelector((state) => state.theme.isDarkMode);
     return (
-        <div onClick={() => {
-            dispatch(toggleTheme());
-        }}>
-            <button className={style.btn} onClick={() => setisdark(!isdark)}>{isdark ? "WHITE-MODE" : "DARK-MODE"}</button>
+        <div onClick={() => {dispatch(toggleTheme());}}>
+            <button className={style.btn} >{isDark ? "WHITE-MODE" : "DARK-MODE"}</button>
         </div>
     );
 }

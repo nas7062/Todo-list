@@ -5,13 +5,13 @@ import { initialTodos} from "../data/initialState";
 const todoSlice = createSlice({
     name:'todos',
     initialState :{
-        todos:initialTodos,
-        selected :'',
-        isHide:false,
-        newDate:null,
-    },
+        todos:initialTodos, // todos 객체
+        selected :'',  //선택된값
+        isHide:false, 
+        newDate:null, // 날짜
+    }, // 초기값
     reducers :{
-        setDates:(state,action) =>{
+        setDates:(state,action) =>{ // 날짜 설정
             state.newDate =action.payload ?
             format(new Date(action.payload),'yyyy-MM-dd')
             :'yyyy-MM--dd';
@@ -22,11 +22,11 @@ const todoSlice = createSlice({
                 id:state.todos.length +1,
                 isDone:false,
             };
-            state.todos.push(newTodo);
+            state.todos.push(newTodo); //todos에 newtodo를 push하여  넣어줌
         },
         updateTodo:(state,action) =>{
             const UpdateIndex = state.todos.findIndex(
-                (item) =>item.id ===action.payload.id);
+                (item) =>item.id ===action.payload.id); 
             if(UpdateIndex >=0)
             {
                 state.todos.splice(UpdateIndex,1,action.payload);

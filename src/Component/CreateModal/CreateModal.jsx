@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { setDates, addTodo, updateTodo, resetTodo } from "../../reducers/todo";
 import { openModal, openCalendar } from "../../reducers/event";
 import style from "./CreateModal.module.css";
 export default function CreateModal() {
     const dispatch = useDispatch();
     const todos = useSelector((state) => state.todos.todos);
-    const tagdata = useSelector((state) => state.todos.tags);
     const selected = useSelector((state) => state.todos.selected);
     const date = useSelector((state) => state.todos.newDate);
     const isOpen = useSelector((state) => state.event.isOpen);
@@ -28,25 +26,21 @@ export default function CreateModal() {
         title,
         content,
         tag: selected,
-
         isDone: false,
         date,
     };
     const editTodos = todos.find((el) => el.id === target);
-
     const updateTodos = {
         ...editTodos,
         title,
         content,
         tag: selected,
-
         date,
     };
 
     const CleanModal = () => {
         settitle("");
         setcontent("");
-
         dispatch((openModal()));
         dispatch(setDates(null));
         return null;
@@ -55,7 +49,6 @@ export default function CreateModal() {
         if (type === 'create') {
             settitle("");
             setcontent("");
-
             dispatch(setDates(null));
         }
         if (!editTodos)
@@ -63,7 +56,6 @@ export default function CreateModal() {
 
         settitle(editTodos.title);
         setcontent(editTodos.content);
-
         dispatch(setDates(editTodos.date));
 
     }, [type, editTodos]);
@@ -78,7 +70,6 @@ export default function CreateModal() {
                 >
                     <div className={style.view} onClick={(e) => e.stopPropagation()}>
                         <div className={style.buttonBox}>
-
                             <button className={style.btn} onClick={() => {
                                 {
                                     if (type === "create") {

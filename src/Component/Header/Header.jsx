@@ -8,16 +8,11 @@ export default function Header() {
     return (
         <>
             <div className={`${!isDark ? style.box : style.darkbox}`}>
-                <h1 onClick={() => {
-                    dispatch(resetTodo());
-                    dispatch(isHideTodo());
-                }}>TO DO LIST</h1>
+                <h1 >TO DO LIST</h1>
                 <button className={style.btn} onClick={() => {
                     dispatch(openModal());
                     dispatch(modalType("create"));
-                }}>
-                    추가하기
-                </button>
+                }}> 추가하기 </button>
             </div>
         </>
 

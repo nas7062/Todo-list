@@ -11,16 +11,13 @@ export default function Post({ id, title, content, tag, tagColor, isDone, date }
     const targetDate = date;
     const TimeDifference = new Date(targetDate) - new Date(today) / 1000;
     const DaysDifference = Math.floor(TimeDifference / (1000 * 60 * 60 * 24)) - 19801;
-
-    const D_day = DaysDifference === 0 ? "D-day" :
-        DaysDifference > 0 ? `D-${DaysDifference}` : `D+${Math.abs(DaysDifference)}`;
-
-    console.log(`daysDifference: ${DaysDifference}`);
+    const D_day = DaysDifference === 0 ? "D-day" : DaysDifference > 0
+        ? `D-${DaysDifference}` : `D+${Math.abs(DaysDifference)}`;
     const [isModal, setisModal] = useState(false);
+
     const OpenModalHandler = () => {
         setisModal(!isModal);
     }
-
     return (
         <div className={`${!isDark ? style.PostContainer : style.DarkPost}`}>
             <div key={id}>

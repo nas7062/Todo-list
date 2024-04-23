@@ -5,7 +5,7 @@ const initialState ={
     target :null,
     type :"create",
     CalendarOpen :false,
-};
+}; // 초기값
 
 const eventSilce =createSlice({
     name :"event",
@@ -14,7 +14,7 @@ const eventSilce =createSlice({
         openModal :(state,action)=>{
             state.isOpen = !state.isOpen;
             state.target = action.payload ? action.payload :null;
-        },
+        }, // 모달 열기 
         modalType:(state,action)=>{
             state.type = action.payload ? action.payload :"create";
         },
@@ -29,7 +29,6 @@ export const
     openModal,
     modalType,
     openCalendar,
-    hideDone,
 } = eventSilce.actions;
 
 export default eventSilce;

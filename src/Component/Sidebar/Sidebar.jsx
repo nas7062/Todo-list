@@ -11,11 +11,8 @@ export default function Sidebar() {
         <nav className={`${!isDark ? style.Side : style.darkbox}`}>
 
             <div className={style.main} onClick={() => {
-                dispatch(doneFilterTodo());
-            }}>
-
-
-                <input type="checkbox" checked={isHide} />
+                dispatch(doneFilterTodo());}}>
+                <input type="checkbox" checked={isHide} /> {/* check 되면 isHide */}
                 <label > HIDE DONE!</label>
             </div>
             <Toggle />
